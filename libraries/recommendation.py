@@ -16,8 +16,8 @@ class TimeInterval:
 
     def get_interval(self):
         list_of_intervals = [
-            # self.INTERVAL_30_MINUTES,
-            # self.INTERVAL_1_HOUR,
+            self.INTERVAL_30_MINUTES,
+            self.INTERVAL_1_HOUR,
             self.INTERVAL_2_HOURS,
             self.INTERVAL_4_HOURS,
             self.INTERVAL_1_DAY,
@@ -77,7 +77,7 @@ class Recommendation:
             'VERSION': self.__VERSION__
         }
 
-    def summary(self, exchange='BITKUB', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_4_HOURS):
+    def summary(self, exchange='BITKUB', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_1_DAY):
         try:
             obj = TA_Handler(
                 symbol=f'{symbol}{currency}',
