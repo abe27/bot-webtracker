@@ -1,0 +1,562 @@
+[
+    {
+        "group": "DeFi",
+        "name": "AAVE",
+        "description": "Aave Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "ABT",
+        "description": "ArcBlock Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "ADA",
+        "description": "Cadano",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "ALICE",
+        "description": "My Neighbor Alice",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "ALPHA",
+        "description": "Aplpha Finance",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "AVAX",
+        "description": "Avalanche",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "AXS",
+        "description": "Axis Infinity",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Meme",
+        "name": "BABYDOGE",
+        "description": "Baby Doge",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "BAL",
+        "description": "Balancer Protocol",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Oracle",
+        "name": "BAND",
+        "description": "Band Protocol",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "BAT",
+        "description": "Basic Attention Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "รักษามูลค่า",
+        "name": "BCH",
+        "description": "Bitcoin Cash",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "BNB",
+        "description": "Binance Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "BOBA",
+        "description": "Boba Network",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "รักษามูลค่า",
+        "name": "BTC",
+        "description": "Bitcoin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "BUSD",
+        "description": "Binance USD",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "CAKE",
+        "description": "Pancake Swap",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "COMP",
+        "description": "Compound",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "CRV",
+        "description": "Curve Finance",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Other",
+        "name": "CTXC",
+        "description": "Cortex",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "CVC",
+        "description": "Civic",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "DAI",
+        "description": "Dai Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "DAR",
+        "description": "Mines of Dalarnia",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "DGX",
+        "description": "Digix Gold",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Meme",
+        "name": "DOGE",
+        "description": "Dogecoin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "DON",
+        "description": "Donnie Finance",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "รักษามูลค่า",
+        "name": "DOT",
+        "description": "Polkadot",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "DYDX",
+        "description": "Decentrailized Exchange (DEX)",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "ENJ",
+        "description": "Enjin Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "EOS",
+        "description": "EOS Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Name Service",
+        "name": "ENS",
+        "description": "Ethereum Name Service",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "ETH",
+        "description": "Ethereum",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "EVX",
+        "description": "Everex",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "EXFI",
+        "description": "Experimental Finance",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "FTT",
+        "description": "FTX Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "GALA",
+        "description": "Gala Games",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "GEMINI",
+        "description": "Gemini Dollar",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "GF",
+        "description": "GuildFi",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "GLM",
+        "description": "Golem Project",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "GT",
+        "description": "GateChain",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Meme",
+        "name": "HDOG",
+        "description": "Husky Inu",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "ILV",
+        "description": "Illuvium",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "IMX",
+        "description": "Immutable X",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "IOST",
+        "description": "IOSToken",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "JFIN",
+        "description": "JFIN Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "KLAY",
+        "description": "Klayth Blockchain",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "KNC",
+        "description": "Kyber Network Crystal",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "KSM",
+        "description": "Kusama",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "KUB",
+        "description": "Bitkub Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Oracle",
+        "name": "LINK",
+        "description": "Chainlink",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "รักษามูลค่า",
+        "name": "LTC",
+        "description": "Litecoin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "LYXE",
+        "description": "Lukso",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "MANA",
+        "description": "Decentraland",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "MATIC",
+        "description": "Polygon",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "MKR",
+        "description": "Maker Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Meme",
+        "name": "MONA",
+        "description": "MONA Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "NEAR",
+        "description": "NEAR Protocol",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Other",
+        "name": "OCEAN",
+        "description": "Ocean Protocol",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "OMG",
+        "description": "OMG Network",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Power Ledger",
+        "name": "POW",
+        "description": "Power Ledger Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Scalability",
+        "name": "RDN",
+        "description": "Raiden Network Token ",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "GameFi",
+        "name": "SAND",
+        "description": "The sandbox",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "SCRT",
+        "description": "Secret Network",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "SGB",
+        "description": "Songbird Network",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "SIX",
+        "description": "SIX Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Meme",
+        "name": "SHIB",
+        "description": "Shiba Inu",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DApps",
+        "name": "SNT",
+        "description": "Status Network Token",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "SNX",
+        "description": "Synthetix",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "สัญญาอัจฉริยะ",
+        "name": "SOL",
+        "description": "Solana",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "SUSHI",
+        "description": "SushiSwap",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "UNI",
+        "description": "Uniswap",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "USDC",
+        "description": "USD Coin",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Stablecoin",
+        "name": "USDT",
+        "description": "Tether US",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "VELO",
+        "description": "Velo",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Cross Network",
+        "name": "WAN",
+        "description": "Wanchain",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "XLM",
+        "description": "Stellar",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "ส่งต่อมูลค่า",
+        "name": "XRP",
+        "description": "Ripple",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "DeFi",
+        "name": "YFI",
+        "description": "Yearn Finance",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "รักษามูลค่า",
+        "name": "ZIL",
+        "description": "Zilliqa",
+        "image_url": "",
+        "is_active": true
+    },
+    {
+        "group": "Exchange",
+        "name": "ZRX",
+        "description": "0x Protocol",
+        "image_url": "",
+        "is_active": true
+    }
+]
