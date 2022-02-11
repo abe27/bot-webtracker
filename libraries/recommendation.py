@@ -77,13 +77,13 @@ class Recommendation:
             'VERSION': self.__VERSION__
         }
 
-    def summary(self, exchange='BITKUB', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_1_DAY):
+    def summary(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
         try:
             obj = TA_Handler(
-                symbol=f'{symbol}{currency}',
+                symbol=f'{symbol}{quote}',
                 screener='crypto',
                 exchange=exchange,
-                interval=time
+                interval=interval
             )
             data = obj.get_analysis().summary
             if len(data) <= 0:
@@ -91,13 +91,13 @@ class Recommendation:
 
             obj = {
                 'SYMBOL': symbol,
-                'CURRENCY': currency,
+                'CURRENCY': quote,
                 'EXCHANGE': exchange,
                 'RECOMMENDATION': data['RECOMMENDATION'],
                 'BUY': data['BUY'],
                 'SELL': data['SELL'],
                 'NEUTRAL': data['NEUTRAL'],
-                'TIMEFRAME': time,
+                'TIMEFRAME': interval,
                 'VERSION': self.__VERSION__
             }
 
@@ -106,24 +106,25 @@ class Recommendation:
 
         except Exception as e:
             self.__DATA__INIT__['error'] = e
-            return self.__DATA__INIT__
 
-    def oscillators(self, exchange='Bitkub', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_1_DAY):
+        return self.__DATA__INIT__
+
+    def oscillators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
         try:
             obj = TA_Handler(
-                symbol=f'{symbol}{currency}',
+                symbol=f'{symbol}{quote}',
                 screener='crypto',
                 exchange=exchange,
-                interval=time
+                interval=interval
             )
             data = obj.get_analysis().oscillators
             if len(data) <= 0:
                 return self.__DATA__INIT__
 
             self.__DATA__INIT__['SYMBOL'] = symbol
-            self.__DATA__INIT__['CURRENCY'] = currency
+            self.__DATA__INIT__['CURRENCY'] = quote
             self.__DATA__INIT__['EXCHANGE'] = exchange
-            self.__DATA__INIT__['TIMEFRAME'] = time
+            self.__DATA__INIT__['TIMEFRAME'] = interval
             self.__DATA__INIT__['COMPUTE'] = data['COMPUTE']
             self.__DATA__INIT__['VERSION'] = self.__VERSION__
             print(data)
@@ -133,22 +134,22 @@ class Recommendation:
             self.__DATA__INIT__['error'] = e
             return self.__DATA__INIT__
 
-    def moving_averages(self, exchange='Bitkub', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_1_DAY):
+    def moving_averages(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
         try:
             obj = TA_Handler(
-                symbol=f'{symbol}{currency}',
+                symbol=f'{symbol}{quote}',
                 screener='crypto',
                 exchange=exchange,
-                interval=time
+                interval=interval
             )
             data = obj.get_analysis().moving_averages
             if len(data) <= 0:
                 return self.__DATA__INIT__
 
             self.__DATA__INIT__['SYMBOL'] = symbol
-            self.__DATA__INIT__['CURRENCY'] = currency
+            self.__DATA__INIT__['CURRENCY'] = quote
             self.__DATA__INIT__['EXCHANGE'] = exchange
-            self.__DATA__INIT__['TIMEFRAME'] = time
+            self.__DATA__INIT__['TIMEFRAME'] = interval
             self.__DATA__INIT__['COMPUTE'] = data['COMPUTE']
             self.__DATA__INIT__['VERSION'] = self.__VERSION__
             print(self.__DATA__INIT__)
@@ -158,22 +159,22 @@ class Recommendation:
             self.__DATA__INIT__['error'] = e
             return self.__DATA__INIT__
 
-    def indicators(self, exchange='Bitkub', symbol='BTC', currency='THB', time=TimeInterval().INTERVAL_1_DAY):
+    def indicators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
         try:
             obj = TA_Handler(
-                symbol=f'{symbol}{currency}',
+                symbol=f'{symbol}{quote}',
                 screener='crypto',
                 exchange=exchange,
-                interval=time
+                interval=interval
             )
             data = obj.get_analysis().indicators["RSI"]
             if len(data) <= 0:
                 return self.__DATA__INIT__
 
             self.__DATA__INIT__['SYMBOL'] = symbol
-            self.__DATA__INIT__['CURRENCY'] = currency
+            self.__DATA__INIT__['CURRENCY'] = quote
             self.__DATA__INIT__['EXCHANGE'] = exchange
-            self.__DATA__INIT__['TIMEFRAME'] = time
+            self.__DATA__INIT__['TIMEFRAME'] = interval
             self.__DATA__INIT__['COMPUTE'] = data['COMPUTE']
             self.__DATA__INIT__['VERSION'] = self.__VERSION__
             print(self.__DATA__INIT__)

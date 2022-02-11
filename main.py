@@ -3,7 +3,7 @@ import sys
 from binance.client import Client
 from binance.exceptions import BinanceAPIException
 from libraries.exports import Exports
-from libraries.recommendation import Recommendation
+from libraries.recommendation import Recommendation, TimeInterval
 from dotenv import load_dotenv
 
 # init
@@ -48,15 +48,18 @@ def main():
     #     i += 1
     # export.export_to_json('exports/assets.json', bal)
 
-    # get products
-    products = client.get_products()
-    i = 0
-    while i < len(products['data']):
-        r = products['data'][i]
-        print(f"{(i + 1)}. {r['b']}/{r['q']}")
-        data = recommendation.summary(exchange='BINANCE', symbol=str(r['b']),currency=str(r['q']))
-        print(data)
-        i += 1
+    # # get products
+    # products = client.get_products()
+    # i = 0
+    # while i < len(products['data']):
+    #     r = products['data'][i]
+    #     print(f"{(i + 1)}. {r['b']}/{r['q']}")
+    #     data = recommendation.summary(exchange='BINANCE', symbol=str(r['b']),currency=str(r['q']))
+    #     print(data)
+    #     i += 1
+
+    info = client.get_exchange_info()
+    print(info)
 
     client.close_connection()
 
