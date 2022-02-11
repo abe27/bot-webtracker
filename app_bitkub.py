@@ -3,6 +3,7 @@ import sys
 from termcolor import colored
 from bitkub import Bitkub
 from libraries.recommendation import Recommendation, TimeInterval
+from libraries.auth import Authentication
 from dotenv import load_dotenv
 
 # initialize
@@ -13,9 +14,11 @@ API_SECRET = os.environ.get('BITKUB_SECRET')
 bitkub = Bitkub(API_KEY, API_SECRET)
 recommendation = Recommendation()
 timeInterval = TimeInterval()
+auth = Authentication()
 
 
 def main():
+    auth.login()
     print(f'status: {bitkub.status()}')
     print(f'time server: {bitkub.servertime()}')
     symbol = bitkub.symbols()
@@ -26,6 +29,7 @@ def main():
         r['bq'] = r['symbol']
         r['symbol'] = str(r['symbol'])[len('THB_'):]
         ticker = bitkub.ticker(sym=r['bq'])
+        print(ticker)
         if len(ticker) > 0:
             # print(r)
             # list of time_interval
@@ -65,10 +69,13 @@ def main():
             print(f"-----------------------------")
             if scores <= 3:
                 print(f"upload {r['symbol']} to db")
+                auth.create_interesting(asset=r['symbol'], price=ticker[str(r['bq'])]['last'], percent=ticker[str(r['bq'])]['percentChange'])
 
             # print(f"{r['symbol']} percent: {ticker[str(r['bq'])]['percentChange']}% recommend: {recomm['RECOMMENDATION']} interesting: {interesting} on time: {x}")
 
         i += 1
+
+    auth.logout()
 
 
 if __name__ == '__main__':
