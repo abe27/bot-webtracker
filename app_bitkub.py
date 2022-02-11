@@ -63,6 +63,9 @@ def main():
 
             print(f"{r['symbol']} score: {scores} percent: {ticker[str(r['bq'])]['percentChange']}%")
             print(f"-----------------------------")
+            if scores <= 3:
+                print(f"upload {r['symbol']} to db")
+
             # print(f"{r['symbol']} percent: {ticker[str(r['bq'])]['percentChange']}% recommend: {recomm['RECOMMENDATION']} interesting: {interesting} on time: {x}")
 
         i += 1
