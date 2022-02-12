@@ -40,7 +40,7 @@ def main():
                 if len(recomm['RECOMMENDATION']) <= 0:
                     recomm['RECOMMENDATION'] = '-'
 
-                text_color = None
+                text_color = 'magenta'
                 if str(recomm['RECOMMENDATION']) == 'STRONG_BUY':
                     scores -= 1
                     text_color = 'blue'
@@ -59,19 +59,17 @@ def main():
                     scores += 1
                     text_color = 'cyan'
 
-                else:
-                    text_color = 'magenta'
-
                 print(
                     f"{colored(r['symbol'], 'cyan', attrs=['bold'])} on time {colored(x, 'blue')} is {colored(str(recomm['RECOMMENDATION']), text_color)}")
 
             print(f"{r['symbol']} score: {scores} percent: {ticker[str(r['bq'])]['percentChange']}%")
             print(f"-----------------------------")
-            if scores <= 3:
-                print(f"upload {r['symbol']} to db")
-                auth.create_interesting(asset=r['symbol'], price=ticker[str(r['bq'])]['last'], percent=ticker[str(r['bq'])]['percentChange'])
 
-            # print(f"{r['symbol']} percent: {ticker[str(r['bq'])]['percentChange']}% recommend: {recomm['RECOMMENDATION']} interesting: {interesting} on time: {x}")
+            txt_trend = 'SHORT'
+            if scores <= 3:
+                txt_trend = 'LONG'
+
+            auth.create_interesting(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=ticker[str(r['bq'])]['percentChange'])
 
         i += 1
 
