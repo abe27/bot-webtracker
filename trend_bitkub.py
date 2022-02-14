@@ -56,7 +56,7 @@ def main():
                     text_color = 'yellow'
 
                 elif str(recomm['RECOMMENDATION']) == 'NEUTRAL':
-                    scores += 1
+                    scores -= 0.5
                     text_color = 'cyan'
 
                 print(
