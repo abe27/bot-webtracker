@@ -4,6 +4,7 @@ from termcolor import colored
 from bitkub import Bitkub
 from libraries.recommendation import Recommendation, TimeInterval
 from libraries.auth import Authentication
+from libraries.logs import Logs
 from dotenv import load_dotenv
 
 # initialize
@@ -15,8 +16,7 @@ bitkub = Bitkub(API_KEY, API_SECRET)
 recommendation = Recommendation()
 timeInterval = TimeInterval()
 auth = Authentication()
-
-
+log = Logs()
 def main():
     auth.login()
     print(f'status: {bitkub.status()}')
