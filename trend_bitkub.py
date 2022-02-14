@@ -68,6 +68,7 @@ def main():
             txt_trend = 'SHORT'
             if scores <= 3:
                 txt_trend = 'LONG'
+                # open order
 
             auth.create_interesting(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=ticker[str(r['bq'])]['percentChange'])
 
