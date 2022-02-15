@@ -62,16 +62,20 @@ def main():
                 print(
                     f"{colored(r['symbol'], 'cyan', attrs=['bold'])} on time {colored(x, 'blue')} is {colored(str(recomm['RECOMMENDATION']), text_color)}")
 
-            print(f"{r['symbol']} score: {scores} percent: {ticker[str(r['bq'])]['percentChange']}%")
+            percent = ticker[str(r['bq'])]['percentChange']
+            print(f"{r['symbol']} score: {scores} percent: {percent}%")
             print(f"-----------------------------")
 
             txt_trend = 'SHORT'
             if scores <= 3:
                 txt_trend = 'LONG'
+
+            if scores <= 3 and percent < 3:
+                txt_trend = 'INTEREST'
                 # open order
                 print('open order')
 
-            auth.create_interesting(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=ticker[str(r['bq'])]['percentChange'])
+            auth.create_interesting(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
 
         i += 1
 
