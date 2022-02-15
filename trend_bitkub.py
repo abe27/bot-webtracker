@@ -29,7 +29,7 @@ def main():
         r['bq'] = r['symbol']
         r['symbol'] = str(r['symbol'])[len('THB_'):]
         ticker = bitkub.ticker(sym=r['bq'])
-        print(ticker)
+        on_time_frame = []
         if len(ticker) > 0:
             # print(r)
             # list of time_interval
@@ -62,6 +62,13 @@ def main():
                 print(
                     f"{colored(r['symbol'], 'cyan', attrs=['bold'])} on time {colored(x, 'blue')} is {colored(str(recomm['RECOMMENDATION']), text_color)}")
 
+                str_trend = (str(recomm['RECOMMENDATION'])).replace('SELL', 'SHORT')
+                on_time_frame.append({
+                    'symbol': r['symbol'],
+                    'trend': str(str_trend).replace('BUY', 'LONG'),
+                    'on_time': x
+                })
+
             percent = ticker[str(r['bq'])]['percentChange']
             print(f"{r['symbol']} score: {scores} percent: {percent}%")
             print(f"-----------------------------")
@@ -75,7 +82,16 @@ def main():
                 # open order
                 print('open order')
 
-            auth.create_interesting(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
+            auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
+
+            # create trend with timeframe
+            h = 0
+            while h < len(on_time_frame):
+                tframe = on_time_frame[h]
+                auth.create_trend_with_timeframe(asset=tframe['symbol'], on_time=tframe['on_time'],
+                                                 trend=tframe['trend'])
+                h += 1
+            # print(on_time_frame)
 
         i += 1
 
