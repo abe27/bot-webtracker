@@ -20,7 +20,7 @@ class Authentication:
         response = requests.request("POST", url, headers=headers, data=payload)
         r = response.json()
         self.__token__ = r['data']['token']
-        print(response.text)
+        return response.json()
 
     def logout(self):
         url = f"{self.__url__}/logout"
@@ -31,7 +31,7 @@ class Authentication:
 
         response = requests.request("POST", url, headers=headers, data=payload)
 
-        print(response.text)
+        return response.json()
 
     def create_trend(self, asset='KUB', exchange='Bitkub', quote='THB', trend='-', price=0, percent=0):
         url = f"{self.__url__}/trend/create"
@@ -44,7 +44,7 @@ class Authentication:
 
         response = requests.request("POST", url, headers=headers, data=payload)
 
-        print(response.text)
+        return response.json()
 
     def create_trend_with_timeframe(self, asset='BTC', currency='THB', on_time='4h', trend='LONG'):
         url = "http://localhost:8000/api/v1/trend/timeframe"
@@ -57,6 +57,7 @@ class Authentication:
 
         response = requests.request("POST", url, headers=headers, data=payload)
 
-        print(response.text)
+        # print(response.text)
+        return response.json()
 
 
