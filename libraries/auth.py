@@ -60,4 +60,25 @@ class Authentication:
         # print(response.text)
         return response.json()
 
+    def create_order(self, trend_id,
+                     order_type_id='spot',
+                     orderno=None,
+                     hashno=None,
+                     price=0,
+                     total_coin=0,
+                     fee=0,
+                     trend='Buy',
+                     type='Auto',
+                     status='Limit',
+                     is_active=1):
+        url = f"{self.__url__}/order/create"
 
+        payload = f'trend_id={trend_id}&order_type_id={order_type_id}&orderno={orderno}&hashno={hashno}&price={price}&total_coin={total_coin}&fee={fee}&trend={trend}&type={type}&status={status}&is_active={is_active}'
+        headers = {
+            'Authorization': f'Bearer {self.__token__}',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+
+        response = requests.request("POST", url, headers=headers, data=payload)
+
+        return response.json()
