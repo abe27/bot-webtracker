@@ -92,7 +92,7 @@ def main():
                 })
 
             percent = ticker[str(r['bq'])]['percentChange']
-            print(f"{r['symbol']} score: {scores} percent: {percent}%")
+            print(f"{r['symbol']} score: {scores} price: {ticker[str(r['bq'])]['last']} percent: {percent}%")
             print(f"-----------------------------")
 
             txt_trend = 'SHORT'
@@ -104,8 +104,7 @@ def main():
                 # open order
                 print('open order')
 
-            auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'],
-                                               percent=percent)
+            auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
             # create trend with timeframe
             h = 0
             while h < len(on_time_frame):
