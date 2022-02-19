@@ -74,10 +74,10 @@ def main():
             print(f"-----------------------------")
 
             txt_trend = 'SHORT'
-            if scores <= 3:
+            if scores <= 5:
                 txt_trend = 'LONG'
 
-            if scores <= 3 and percent < 3:
+            if scores <= 5 and percent < 3:
                 txt_trend = 'INTEREST'
                 # open order
                 print('open order')
