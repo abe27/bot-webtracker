@@ -39,9 +39,8 @@ def main():
     #
     # time.sleep(5)
     # print('cancel')
-    # cancel_order = bitkub.cancel_order(sym='THB_XRP', id=__id, sd=1, hash=__hash_no)
+    # cancel_order = bitkub.cancel_order(sym='THB_XRP', id='104989639', sd=1, hash='fwQ6dnQYKnkHWeiudqaxaNWiKWg')
     # print(cancel_order)
-
     print(f'status: {bitkub.status()}')
     print(f'time server: {bitkub.servertime()}')
     symbol = bitkub.symbols()
@@ -105,7 +104,7 @@ def main():
                 # open order
                 print('open order')
 
-            response_trend = auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'],
+            auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'],
                                                percent=percent)
             # create trend with timeframe
             h = 0
@@ -115,26 +114,6 @@ def main():
                                                  trend=tframe['trend'])
                 h += 1
             # print(on_time_frame)
-
-            if txt_trend == 'INTEREST':
-                print(f"open order {response_trend['data']['id']}")
-                # # create order bitkub
-                bid = bitkub.place_bid(sym='THB_BTC', amt=50, rat=float(ticker[str(r['bq'])]['last']) - 1, typ='limit')
-                if bid['error'] == 0:
-                    print(bid['result'])
-                    __id = bid['result']['id']
-                    __hash_no = bid['result']['hash']
-                    __price = bid['result']['rat']
-                    __total_coin = bid['result']['rec']
-                    __fee = bid['result']['fee']
-
-                    auth.create_order(trend_id=response_trend['data']['id'],
-                                      orderno=__id,
-                                      hashno=__hash_no,
-                                      price=__price,
-                                      total_coin=__total_coin,
-                                      fee=__fee)
-
         i += 1
 
     auth.logout()
