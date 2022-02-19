@@ -1,5 +1,7 @@
 import os
 import sys
+import time
+
 from termcolor import colored
 from bitkub import Bitkub
 from libraries.recommendation import Recommendation, TimeInterval
@@ -9,6 +11,7 @@ from dotenv import load_dotenv
 
 # initialize
 load_dotenv()
+API_HOST = os.environ.get('BITKUB_HOST')
 API_KEY = os.environ.get('BITKUB_KEY')
 API_SECRET = os.environ.get('BITKUB_SECRET')
 
@@ -17,8 +20,28 @@ recommendation = Recommendation()
 timeInterval = TimeInterval()
 auth = Authentication()
 log = Logs()
+
+
 def main():
     auth.login()
+    # bid = bitkub.place_bid(sym='THB_XRP', amt=25, rat=10, typ='limit')
+    # __id = None
+    # __hash_no = None
+    # if bid['error'] == 0:
+    #     print(bid['result'])
+    #     __id = bid['result']['id']
+    #     __hash_no = bid['result']['hash']
+    #
+    # time.sleep(15)
+    # print('check order')
+    # check_bid = bitkub.order_info(sym='THB_XRP', id=__id, sd='buy', hash=__hash_no)
+    # print(check_bid)
+    #
+    # time.sleep(5)
+    # print('cancel')
+    # cancel_order = bitkub.cancel_order(sym='THB_XRP', id=__id, sd=1, hash=__hash_no)
+    # print(cancel_order)
+
     print(f'status: {bitkub.status()}')
     print(f'time server: {bitkub.servertime()}')
     symbol = bitkub.symbols()
@@ -74,15 +97,19 @@ def main():
             print(f"-----------------------------")
 
             txt_trend = 'SHORT'
-            if scores <= 5:
+            if scores < 4:
                 txt_trend = 'LONG'
 
-            if scores <= 5 and percent < 3:
+            if scores < 4 and percent < 3:
                 txt_trend = 'INTEREST'
                 # open order
                 print('open order')
 
-            auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
+            response_trend = auth.create_trend(asset=r['symbol'], trend=txt_trend, price=ticker[str(r['bq'])]['last'], percent=percent)
+            print(response_trend['data']['id'])
+            # # create order bitkub
+            # bid = bitkub.place_bid(sym='THB_BTC', amt=1, rat=10000, typ='limit')
+            # print(bid)
 
             # create trend with timeframe
             h = 0

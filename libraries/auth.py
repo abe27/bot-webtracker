@@ -47,7 +47,7 @@ class Authentication:
         return response.json()
 
     def create_trend_with_timeframe(self, asset='BTC', currency='THB', on_time='4h', trend='LONG'):
-        url = "http://localhost:8000/api/v1/trend/timeframe"
+        url = f"{self.__url__}/trend/timeframe"
 
         payload = f'asset={asset}&currency={currency}&on_time={on_time}&trend={trend}'
         headers = {
