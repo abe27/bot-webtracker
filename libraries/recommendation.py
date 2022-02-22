@@ -1,6 +1,7 @@
 from tradingview_ta import TA_Handler
+from libraries.logs import Logs
 
-
+log = Logs()
 class TimeInterval:
     def __init__(self):
         self.INTERVAL_1_MINUTE = "1m"
@@ -64,9 +65,9 @@ class TimeInterval:
 
 class Recommendation:
     def __init__(self):
-        print(f"*******************************")
-        print(f"🤫 starting get recommendation.")
-        print(f"*******************************")
+        log.print_color(f"\n*******************************")
+        log.print_color(f"🤫 starting get recommendation.")
+        log.print_color(f"*******************************\n")
         self.__VERSION__ = '0.1b'
         self.__DATA__INIT__ = {
             'SYMBOL': "",
@@ -155,7 +156,7 @@ class Recommendation:
             self.__DATA__INIT__['TIMEFRAME'] = interval
             self.__DATA__INIT__['COMPUTE'] = data['COMPUTE']
             self.__DATA__INIT__['VERSION'] = self.__VERSION__
-            print(self.__DATA__INIT__)
+            # print(self.__DATA__INIT__)
             return data
 
         except Exception as e:
