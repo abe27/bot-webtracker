@@ -2,6 +2,8 @@ from tradingview_ta import TA_Handler
 from libraries.logs import Logs
 
 log = Logs()
+
+
 class TimeInterval:
     def __init__(self):
         self.INTERVAL_1_MINUTE = "1m"
@@ -81,7 +83,7 @@ class Recommendation:
             'VERSION': self.__VERSION__
         }
 
-    def summary(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
+    def summary(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_4_HOURS):
         try:
             obj = TA_Handler(
                 symbol=f'{symbol}{quote}',
@@ -113,7 +115,7 @@ class Recommendation:
 
         return self.__DATA__INIT__
 
-    def oscillators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
+    def oscillators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_4_HOURS):
         try:
             obj = TA_Handler(
                 symbol=f'{symbol}{quote}',
@@ -138,7 +140,7 @@ class Recommendation:
             self.__DATA__INIT__['error'] = e
             return self.__DATA__INIT__
 
-    def moving_averages(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
+    def moving_averages(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_4_HOURS):
         try:
             obj = TA_Handler(
                 symbol=f'{symbol}{quote}',
@@ -163,7 +165,7 @@ class Recommendation:
             self.__DATA__INIT__['error'] = e
             return self.__DATA__INIT__
 
-    def indicators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_1_DAY):
+    def indicators(self, exchange='Bitkub', symbol='BTC', quote='THB', interval=TimeInterval().INTERVAL_4_HOURS):
         try:
             obj = TA_Handler(
                 symbol=f'{symbol}{quote}',
