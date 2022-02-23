@@ -18,10 +18,10 @@ recommendation = Recommendation()
 timeInterval = TimeInterval()
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="investments"
+    host=os.environ.get('MYSQL_HOST'),
+    user=os.environ.get('MYSQL_USERNAME'),
+    password=os.environ.get('MYSQL_PASSWORD'),
+    database=os.environ.get('MYSQL_DBNAME')
 )
 
 log = Logs()
